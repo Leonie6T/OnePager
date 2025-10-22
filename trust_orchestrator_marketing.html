@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Marketing Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Blue & Turquoise Palette with Mustard Accent */
+            --primary-blue: #2C5F7F;
+            --turquoise: #4A9FB0;
+            --light-blue: #7AC5D8;
+            --teal: #3A7A8A;
+            --sky-blue: #A8D5E2;
+            --mustard-accent: #D4A843;
+            --deep-navy: #1a3a4f;
+            --rich-navy: #2a4a5f;
+            --midnight-blue: #1a2f3f;
+            --ivory: #FAF9F6;
+            --warm-white: #F5F4F0;
+            --charcoal: #2a2a2a;
+            --silver: #B8B8B8;
+            --text-primary: #2a2a2a;
+            --text-secondary: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: linear-gradient(135deg, #FAF9F6 0%, #F5F4F0 50%, #FAF9F6 100%);
+            color: #2a2a2a;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Elegant Musical Staff Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.035;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 40px,
+                var(--turquoise) 40px,
+                var(--turquoise) 41px
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 420mm; /* Two A4 pages side by side */
+            margin: 0 auto;
+            padding: 12mm 15mm;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(250, 249, 246, 0.95) 50%,
+                rgba(255, 255, 255, 0.95) 100%);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 60px rgba(74, 159, 176, 0.15);
+            border-left: 1px solid rgba(74, 159, 176, 0.3);
+            border-right: 1px solid rgba(74, 159, 176, 0.3);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+        }
+
+        /* Left Page */
+        .left-page {
+            width: 100%;
+            padding-right: 4mm;
+            border-right: 1px solid rgba(74, 159, 176, 0.2);
+        }
+
+        /* Right Page */
+        .right-page {
+            width: 100%;
+            padding-left: 4mm;
+        }
+
+        /* Header Section - Refined Opening */
+        .header {
+            text-align: center;
+            margin-bottom: 6mm;
+            position: relative;
+            padding: 4mm 0 5mm 0;
+            border-bottom: 2px solid var(--turquoise);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60mm;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                var(--primary-blue) 20%,
+                var(--primary-blue) 80%,
+                transparent);
+        }
+
+        /* Elegant musical ornaments */
+        .header::before {
+            content: '𝄞';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: var(--turquoise);
+            opacity: 0.15;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3mm;
+            gap: 5mm;
+        }
+
+        .main-logo {
+            height: 16mm;
+            width: auto;
+            filter: brightness(1.15) contrast(1.05) drop-shadow(0 2px 6px rgba(74, 159, 176, 0.25));
+        }
+
+        .main-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, var(--primary-blue) 0%, var(--turquoise) 50%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #5a5a5a;
+            font-weight: 400;
+            margin-bottom: 4px;
+            letter-spacing: 0.01em;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: #6a6a6a;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .highlight-bar {
+            background: linear-gradient(90deg,
+                transparent,
+                var(--turquoise) 30%,
+                var(--primary-blue),
+                var(--turquoise) 70%,
+                transparent);
+            height: 1px;
+            width: 80px;
+            margin: 6px auto;
+            opacity: 0.6;
+        }
+
+        .value-prop {
+            font-size: 1.05rem;
+            color: #2a2a2a;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+            letter-spacing: 0.005em;
+        }
+
+        .supporting-tagline {
+            font-size: 0.875rem;
+            color: #4a4a4a;
+            max-width: 620px;
+            margin: 8px auto 0;
+            line-height: 1.6;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.01em;
+        }
+
+        .supporting-tagline .highlight-word {
+            color: var(--mustard-accent);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Emphasized Words */
+        .emphasize-word {
+            color: var(--mustard-accent);
+            font-weight: 700;
+            font-style: normal;
+            position: relative;
+            letter-spacing: 0.02em;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent 60%,
+                rgba(212, 168, 67, 0.15) 60%,
+                rgba(212, 168, 67, 0.15) 100%
+            );
+            padding: 0 2px;
+        }
+
+        /* Narrative Section - Refined */
+        .narrative-section {
+            background: linear-gradient(135deg,
+                rgba(74, 159, 176, 0.08) 0%,
+                rgba(168, 213, 226, 0.12) 100%);
+            border: 1px solid rgba(74, 159, 176, 0.4);
+            border-left: 3px solid var(--turquoise);
+            border-radius: 6px;
+            padding: 5mm 7mm;
+            margin: 5mm 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elegant treble clef watermark */
+        .narrative-section::before {
+            content: '𝄞';
+            position: absolute;
+            top: 6mm;
+            right: 6mm;
+            font-size: 4rem;
+            color: var(--turquoise);
+            opacity: 0.12;
+            line-height: 1;
+        }
+
+        .era-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.85rem;
+            background: linear-gradient(120deg, var(--primary-blue), var(--turquoise), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1.5mm;
+            font-weight: 600;
+            letter-spacing: 0.015em;
+            line-height: 1.25;
+        }
+
+        .era-subtitle {
+            font-size: 1.05rem;
+            color: #5a5a5a;
+            text-align: center;
+            margin-bottom: 5mm;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            font-style: italic;
+        }
+
+        .narrative-flow {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .narrative-challenge {
+            font-size: 0.8rem;
+            color: var(--mustard-accent);
+            font-weight: 600;
+            margin-bottom: 3mm;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .narrative-question {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.4rem;
+            color: #2a2a2a;
+            text-align: center;
+            margin-bottom: 4mm;
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.4;
+            padding: 0 3mm;
+        }
+
+        .narrative-problem {
+            background: transparent;
+            border: none;
+            padding: 3mm 0;
+            margin-bottom: 5mm;
+            text-align: center;
+        }
+
+        .narrative-problem p {
+            font-size: 0.925rem;
+            color: #3a3a3a;
+            line-height: 1.6;
+            margin-bottom: 2.5mm;
+        }
+
+        .narrative-problem p:first-child {
+            font-size: 1rem;
+            color: #C86837;
+            font-weight: 500;
+        }
+
+        .narrative-problem p:last-child {
+            margin-bottom: 0;
+            color: #5a5a5a;
+            font-size: 0.875rem;
+        }
+
+        .narrative-transition {
+            text-align: center;
+            margin: 6mm 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5mm;
+        }
+
+        .transition-divider {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(74, 159, 176, 0.4) 50%,
+                transparent
+            );
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transition-ornament {
+            font-size: 1.5rem;
+            color: var(--turquoise);
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(250, 249, 246, 0.95) 100%);
+            padding: 2mm;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(74, 159, 176, 0.2);
+        }
+
+        .transition-brand-reveal {
+            text-align: center;
+            padding: 4mm 7mm;
+            background: linear-gradient(135deg,
+                rgba(74, 159, 176, 0.12) 0%,
+                rgba(168, 213, 226, 0.15) 100%);
+            border-radius: 8px;
+            border: 2px solid var(--turquoise);
+            box-shadow: 0 4px 16px rgba(74, 159, 176, 0.15);
+            position: relative;
+            min-width: 280px;
+        }
+
+        .transition-intro {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--mustard-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5mm;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .transition-brand {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, var(--primary-blue), var(--turquoise), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .narrative-solution {
+            background: transparent;
+            border: none;
+            padding: 3mm 0;
+            text-align: center;
+        }
+
+        .narrative-solution p {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2rem;
+            color: #2a2a2a;
+            line-height: 1.6;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .narrative-pullquote {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.15rem;
+            color: #2a2a2a;
+            text-align: center;
+            margin: 6mm 0;
+            padding: 0 6mm;
+            font-weight: 400;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .narrative-pullquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(74, 159, 176, 0.3);
+            position: absolute;
+            left: -2mm;
+            top: -8mm;
+            font-family: 'EB Garamond', serif;
+        }
+
+        /* Built For Section - Three Movements */
+        .built-for-section {
+            background: linear-gradient(135deg, rgba(74, 159, 176, 0.12) 0%, rgba(168, 213, 226, 0.15) 100%);
+            border-radius: 8px;
+            padding: 6mm;
+            margin: 5mm 0;
+            position: relative;
+            border: 1px solid var(--turquoise);
+            border-top: 3px solid var(--turquoise);
+        }
+
+        .built-for-section::before {
+            content: '♬';
+            position: absolute;
+            top: 6mm;
+            left: 6mm;
+            font-size: 4rem;
+            color: var(--turquoise);
+            opacity: 0.18;
+        }
+
+        .built-for-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.9rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 3mm;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .built-for-description {
+            font-size: 1rem;
+            color: #3a3a3a;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5mm;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .built-for-description .highlight-word {
+            color: var(--mustard-accent);
+            font-weight: 600;
+        }
+
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4mm;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pillar {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 6px;
+            padding: 4mm;
+            border: 1px solid var(--turquoise);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pillar::before {
+            content: '♩';
+            position: absolute;
+            top: 4mm;
+            right: 4mm;
+            font-size: 2rem;
+            color: var(--turquoise);
+            opacity: 0.25;
+        }
+
+        .pillar:nth-child(2)::before {
+            content: '♪';
+        }
+
+        .pillar:nth-child(3)::before {
+            content: '♫';
+        }
+
+        .pillar-header {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2mm;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .pillar-label {
+            font-size: 0.7rem;
+            color: var(--mustard-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            margin-bottom: 1.5mm;
+            display: block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .pillar-description {
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .pillar-description strong {
+            color: #2a2a2a;
+            font-weight: 600;
+        }
+
+        /* Plateau Section - Visual Story */
+        .plateau-section {
+            background: rgba(255, 245, 240, 0.5);
+            border-radius: 12px;
+            padding: 7mm;
+            margin: 5mm 0;
+            border: 1px solid rgba(255, 112, 67, 0.3);
+            position: relative;
+        }
+
+        .plateau-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff7043 0%, #ff9800 100%);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .plateau-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 2rem;
+            color: #C86837;
+            text-align: center;
+            margin-bottom: 4mm;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .plateau-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .plateau-statement {
+            font-size: 1.05rem;
+            color: #3a3a3a;
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 3mm;
+        }
+
+        .plateau-statement strong {
+            color: #C86837;
+            font-weight: 600;
+        }
+
+        .plateau-problem-highlight {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.15rem;
+            color: #2a2a2a;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.6;
+            margin: 4mm 0;
+            padding: 0 4mm;
+        }
+
+        .plateau-visual {
+            margin: 5mm 0;
+            text-align: center;
+        }
+
+        .plateau-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 181, 246, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .plateau-caption {
+            font-size: 0.75rem;
+            color: #b0bec5;
+            text-align: center;
+            margin-top: 3mm;
+            font-style: italic;
+        }
+
+        /* Breakthrough Section - The Solution */
+        .breakthrough-section {
+            background: linear-gradient(135deg, rgba(38, 198, 218, 0.12) 0%, rgba(100, 181, 246, 0.12) 100%);
+            border-radius: 12px;
+            padding: 7mm;
+            margin: 5mm 0;
+            border: 1px solid rgba(38, 198, 218, 0.35);
+            position: relative;
+        }
+
+        .breakthrough-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #26c6da 0%, #64b5f6 100%);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .breakthrough-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 2rem;
+            color: #1a9aaa;
+            text-align: center;
+            margin-bottom: 4mm;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .breakthrough-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .breakthrough-principle {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.3rem;
+            color: #2a2a2a;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 3.5mm;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .breakthrough-statement {
+            font-size: 1.05rem;
+            color: #3a3a3a;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 4mm;
+        }
+
+        .breakthrough-statement strong {
+            color: #1a9aaa;
+            font-weight: 600;
+        }
+
+        .breakthrough-intro {
+            font-size: 0.95rem;
+            color: #5a5a5a;
+            text-align: center;
+            margin-bottom: 3.5mm;
+            letter-spacing: 0.02em;
+        }
+
+        .breakthrough-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+            margin-top: 4mm;
+        }
+
+        .breakthrough-item {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(38, 198, 218, 0.3);
+            border-radius: 8px;
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+            transition: all 0.3s ease;
+        }
+
+        .breakthrough-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(38, 198, 218, 0.5);
+        }
+
+        .breakthrough-check {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #26c6da, #64b5f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .breakthrough-text {
+            font-size: 0.95rem;
+            color: #3a3a3a;
+            line-height: 1.5;
+        }
+
+        /* Results Section - Elegant Redesign */
+        .results-section {
+            background: linear-gradient(135deg,
+                rgba(74, 159, 176, 0.08) 0%,
+                rgba(168, 213, 226, 0.10) 100%);
+            border-radius: 8px;
+            padding: 5mm 8mm;
+            margin: 5mm 0;
+            border: 1px solid rgba(74, 159, 176, 0.3);
+            border-left: 4px solid var(--turquoise);
+            position: relative;
+        }
+
+        .results-section::before {
+            content: '𝄞';
+            position: absolute;
+            top: 4mm;
+            right: 4mm;
+            font-size: 3rem;
+            color: var(--turquoise);
+            opacity: 0.08;
+            line-height: 1;
+        }
+
+        .results-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.75rem;
+            background: linear-gradient(120deg, var(--primary-blue), var(--turquoise), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 3mm;
+            font-weight: 600;
+            letter-spacing: 0.015em;
+        }
+
+        .results-intro {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 4mm;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* Stats Bar */
+        .results-stats-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6mm;
+            padding: 4mm 0;
+            margin: 4mm 0;
+            border-top: 1px solid rgba(74, 159, 176, 0.25);
+            border-bottom: 1px solid rgba(74, 159, 176, 0.25);
+        }
+
+        .results-stat-item {
+            text-align: center;
+        }
+
+        .results-stat-number {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--mustard-accent);
+            line-height: 1;
+            margin-bottom: 1.5mm;
+            text-shadow: 0 2px 4px rgba(212, 168, 67, 0.15);
+        }
+
+        .results-stat-label {
+            font-size: 0.8rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .results-stat-divider {
+            font-size: 2rem;
+            color: var(--turquoise);
+            opacity: 0.3;
+            font-weight: 300;
+        }
+
+        /* Benefits List */
+        .results-benefits {
+            max-width: 700px;
+            margin: 3mm auto 2mm;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5mm;
+        }
+
+        .results-benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2mm;
+            padding: 1mm 0;
+        }
+
+        .results-benefit-icon {
+            font-size: 1rem;
+            color: var(--turquoise);
+            flex-shrink: 0;
+            margin-top: 0px;
+        }
+
+        .results-benefit-text {
+            font-size: 0.85rem;
+            color: #3a3a3a;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .results-disclaimer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #6a6a6a;
+            margin-top: 4mm;
+            font-style: italic;
+            padding-top: 3mm;
+            border-top: 1px solid rgba(74, 159, 176, 0.2);
+        }
+
+        /* Two-Column Layout for Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+            margin-bottom: 8mm;
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 6mm;
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(74, 159, 176, 0.3);
+            border-radius: 8px;
+            padding: 6mm;
+            backdrop-filter: blur(5px);
+        }
+
+        .section-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 4mm;
+            font-weight: 600;
+        }
+
+        .section-content {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #3a3a3a;
+        }
+
+        /* Problem/Solution Comparison */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+            margin: 4mm 0;
+        }
+
+        .problem-card {
+            background: rgba(255, 245, 240, 0.7);
+            border: 1px solid rgba(255, 112, 67, 0.4);
+            border-radius: 6px;
+            padding: 4mm;
+        }
+
+        .solution-card {
+            background: rgba(240, 250, 255, 0.7);
+            border: 1px solid rgba(38, 198, 218, 0.4);
+            border-radius: 6px;
+            padding: 4mm;
+        }
+
+        .card-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1rem;
+            margin-bottom: 3mm;
+            font-weight: 600;
+        }
+
+        .problem-title {
+            color: #C86837;
+        }
+
+        .solution-title {
+            color: #1a9aaa;
+        }
+
+        /* Platform Architecture */
+        .platform-architecture {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3mm;
+            margin: 4mm 0;
+        }
+
+        .platform-card {
+            background: rgba(168, 213, 226, 0.2);
+            border: 1px solid rgba(74, 159, 176, 0.3);
+            border-radius: 6px;
+            padding: 4mm;
+            text-align: center;
+        }
+
+        .platform-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+            margin-bottom: 2mm;
+            font-weight: 600;
+        }
+
+        .platform-desc {
+            font-size: 0.75rem;
+            color: #5a5a5a;
+            line-height: 1.3;
+        }
+
+        /* Architecture Diagram */
+        .architecture-diagram {
+            width: 100%;
+            height: auto;
+            max-height: 40mm;
+            margin: 3mm 0;
+            border-radius: 4px;
+            border: 1px solid rgba(100, 181, 246, 0.2);
+        }
+
+        .partner-logo {
+            height: 8mm;
+            width: auto;
+            opacity: 0.8;
+            margin: 2mm;
+        }
+
+        /* Channels */
+        .channels-container {
+            text-align: center;
+            margin: 4mm 0;
+        }
+
+        .channels {
+            display: flex;
+            justify-content: center;
+            gap: 3mm;
+            margin: 3mm 0;
+            flex-wrap: wrap;
+        }
+
+        .channel-tag {
+            background: linear-gradient(135deg, #64b5f6, #26c6da);
+            color: white;
+            padding: 2mm 4mm;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+            margin: 3mm 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            padding: 2mm;
+            background: rgba(74, 159, 176, 0.15);
+            border-radius: 4px;
+            border-left: 2px solid var(--turquoise);
+            font-size: 0.75rem;
+            color: #3a3a3a;
+        }
+
+        .benefit-check {
+            color: var(--turquoise);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Statistics Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4mm;
+            margin: 4mm 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(168, 213, 226, 0.2);
+            border: 1px solid rgba(74, 159, 176, 0.3);
+            border-radius: 6px;
+            padding: 4mm;
+        }
+
+        .stat-number {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 1mm;
+        }
+
+        .stat-label {
+            color: #5a5a5a;
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+
+        /* Visual Elements */
+        .icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .check-icon {
+            color: var(--turquoise);
+            font-weight: bold;
+        }
+
+        .arrow-icon {
+            color: var(--primary-blue);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 5mm;
+            padding: 5mm;
+            background: linear-gradient(135deg, rgba(74, 159, 176, 0.12) 0%, rgba(168, 213, 226, 0.15) 100%);
+            border-radius: 8px;
+            border: 2px solid var(--turquoise);
+            border-top: 4px solid var(--turquoise);
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '𝄇'; /* End repeat sign */
+            position: absolute;
+            top: 4mm;
+            left: 4mm;
+            font-size: 3rem;
+            color: var(--turquoise);
+            opacity: 0.2;
+        }
+
+        .partner-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4mm;
+            margin-top: 3mm;
+            padding-top: 2mm;
+            border-top: 1px solid var(--turquoise);
+        }
+
+        .partner-text {
+            font-size: 0.7rem;
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .cta-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2mm;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-text {
+            font-size: 0.95rem;
+            color: #2a2a2a;
+            margin-bottom: 1.5mm;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--turquoise), var(--primary-blue));
+            color: white;
+            padding: 3mm 8mm;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 2mm;
+            box-shadow: 0 3px 12px rgba(74, 159, 176, 0.5);
+            letter-spacing: 0.02em;
+        }
+
+        /* Process Flow Visualization */
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 4mm 0;
+            padding: 3mm;
+            background: rgba(168, 213, 226, 0.2);
+            border-radius: 6px;
+        }
+
+        .process-step {
+            text-align: center;
+            flex: 1;
+            font-size: 0.75rem;
+            color: #3a3a3a;
+        }
+
+        .process-arrow {
+            color: var(--turquoise);
+            font-size: 1.2rem;
+            margin: 0 2mm;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .container {
+                max-width: none;
+                padding: 8mm;
+                background: white;
+            }
+
+            /* Avoid page breaks within sections */
+            .narrative-section,
+            .built-for-section,
+            .plateau-section,
+            .breakthrough-section,
+            .results-section,
+            .cta-section {
+                page-break-inside: avoid;
+            }
+
+            .header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+            }
+            
+            .main-title, .section-title, .platform-name {
+                color: #1a2332;
+            }
+            
+            .subtitle, .tagline {
+                color: #495057;
+            }
+
+            .value-prop, .supporting-tagline {
+                color: #212529;
+            }
+
+            .supporting-tagline .highlight-word {
+                color: #007bff;
+            }
+
+            .emphasize-word {
+                color: #D4A843;
+                background: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    transparent 60%,
+                    rgba(212, 168, 67, 0.2) 60%,
+                    rgba(212, 168, 67, 0.2) 100%
+                );
+            }
+
+            .section-content, .cta-text {
+                color: #495057;
+            }
+            
+            .highlight-bar {
+                background: linear-gradient(90deg, #007bff, #17a2b8);
+            }
+            
+            .channel-tag {
+                background: linear-gradient(135deg, #007bff, #17a2b8);
+            }
+
+            .cta-button {
+                background: linear-gradient(135deg, #007bff, #17a2b8);
+            }
+
+            .narrative-section {
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+            }
+
+            .narrative-section::before {
+                background: linear-gradient(90deg, #007bff, #17a2b8);
+            }
+
+            .era-title, .narrative-transition-text {
+                color: #1a2332;
+            }
+
+            .era-subtitle {
+                color: #007bff;
+            }
+
+            .narrative-question {
+                color: #212529;
+            }
+
+            .narrative-problem p {
+                color: #495057;
+            }
+
+            .narrative-problem p:first-child {
+                color: #dc3545;
+            }
+
+            .narrative-solution p {
+                color: #212529;
+            }
+
+            .transition-divider {
+                background: linear-gradient(to right, transparent, #dee2e6 50%, transparent);
+            }
+
+            .transition-ornament {
+                color: #4A9FB0;
+                background: white;
+                box-shadow: 0 2px 8px rgba(74, 159, 176, 0.15);
+            }
+
+            .transition-brand-reveal {
+                background: #F0F9FB;
+                border-color: #4A9FB0;
+                box-shadow: 0 4px 16px rgba(74, 159, 176, 0.1);
+            }
+
+            .transition-intro {
+                color: #D4A843;
+            }
+
+            .transition-brand {
+                color: #2C5F7F;
+                -webkit-text-fill-color: #2C5F7F;
+            }
+
+            .built-for-section {
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+            }
+
+            .built-for-title {
+                color: #1a2332;
+            }
+
+            .built-for-description {
+                color: #495057;
+            }
+
+            .built-for-description .highlight-word {
+                color: #007bff;
+            }
+
+            .pillar {
+                background: white;
+                border: 1px solid #dee2e6;
+            }
+
+            .pillar-header {
+                color: #007bff;
+            }
+
+            .pillar-description {
+                color: #6c757d;
+            }
+
+            .pillar-description strong {
+                color: #212529;
+            }
+
+            .plateau-section {
+                background: #fff5f5;
+                border: 1px solid #dee2e6;
+            }
+
+            .plateau-section::before {
+                background: linear-gradient(90deg, #dc3545 0%, #fd7e14 100%);
+            }
+
+            .plateau-title {
+                color: #dc3545;
+            }
+
+            .plateau-statement {
+                color: #495057;
+            }
+
+            .plateau-statement strong {
+                color: #dc3545;
+            }
+
+            .plateau-problem-highlight {
+                color: #212529;
+            }
+
+            .plateau-image {
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .plateau-caption {
+                color: #6c757d;
+            }
+
+            .breakthrough-section {
+                background: #f0f9ff;
+                border: 1px solid #dee2e6;
+            }
+
+            .breakthrough-section::before {
+                background: linear-gradient(90deg, #17a2b8, #007bff);
+            }
+
+            .breakthrough-title {
+                color: #17a2b8;
+            }
+
+            .breakthrough-principle {
+                color: #212529;
+            }
+
+            .breakthrough-statement {
+                color: #495057;
+            }
+
+            .breakthrough-statement strong {
+                color: #17a2b8;
+            }
+
+            .breakthrough-intro {
+                color: #6c757d;
+            }
+
+            .breakthrough-item {
+                background: white;
+                border: 1px solid #dee2e6;
+            }
+
+            .breakthrough-item:hover {
+                background: white;
+                border-color: #dee2e6;
+            }
+
+            .breakthrough-check {
+                background: linear-gradient(135deg, #17a2b8, #007bff);
+            }
+
+            .breakthrough-text {
+                color: #495057;
+            }
+
+            .results-section {
+                background: #F8FCFD;
+                border: 1px solid #4A9FB0;
+                border-left: 4px solid #4A9FB0;
+                padding: 5mm 8mm;
+            }
+
+            .results-section::before {
+                opacity: 0.1;
+                font-size: 3rem;
+            }
+
+            .results-title {
+                color: #2C5F7F;
+                font-size: 1.75rem;
+                margin-bottom: 3mm;
+            }
+
+            .results-intro {
+                color: #495057;
+                font-size: 0.9rem;
+                margin-bottom: 4mm;
+            }
+
+            .results-stats-bar {
+                border-top: 1px solid #dee2e6;
+                border-bottom: 1px solid #dee2e6;
+                padding: 4mm 0;
+                margin: 4mm 0;
+                gap: 6mm;
+            }
+
+            .results-stat-number {
+                color: #D4A843;
+                font-size: 2.5rem;
+                margin-bottom: 1.5mm;
+            }
+
+            .results-stat-label {
+                color: #2C5F7F;
+                font-size: 0.8rem;
+            }
+
+            .results-stat-divider {
+                color: #4A9FB0;
+                font-size: 2rem;
+            }
+
+            .results-benefits {
+                margin: 3mm auto 2mm;
+                gap: 1.5mm;
+            }
+
+            .results-benefit-item {
+                gap: 2mm;
+                padding: 1mm 0;
+            }
+
+            .results-benefit-icon {
+                color: #4A9FB0;
+                font-size: 1rem;
+            }
+
+            .results-benefit-text {
+                color: #2a2a2a;
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .results-disclaimer {
+                color: #6c757d;
+                margin-top: 4mm;
+                padding-top: 3mm;
+            }
+        }
+
+        /* Page Break Visual */
+        .container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(74, 159, 176, 0.3) 10%,
+                rgba(74, 159, 176, 0.5) 50%,
+                rgba(74, 159, 176, 0.3) 90%,
+                transparent 100%
+            );
+            z-index: 2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 210mm;
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .left-page, .right-page {
+                padding: 0;
+                border: none;
+            }
+
+            .container::before {
+                display: none;
+            }
+            
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform-architecture {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-container {
+                grid-template-columns: 1fr;
+            }
+
+            .breakthrough-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-stats-bar {
+                flex-direction: column;
+                gap: 5mm;
+            }
+
+            .results-stat-divider {
+                display: none;
+            }
+
+            .results-stat-number {
+                font-size: 2.5rem;
+            }
+
+            .narrative-transition {
+                flex-direction: column;
+                gap: 4mm;
+            }
+
+            .transition-divider {
+                width: 100%;
+                max-width: 150px;
+            }
+
+            .transition-brand-reveal {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .transition-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Page -->
+        <div class="left-page">
+            <!-- Header Section -->
+            <div class="header">
+                <div class="logo-container">
+                    <img src="assets/TO.PNG" alt="Trust Orchestrator Logo" class="main-logo">
+                </div>
+                <h1 class="main-title"></h1>
+                <p class="subtitle"><strong style="font-weight: 700;">Unassisted</strong> Conversational AI You Can Trust</p>
+                <div class="highlight-bar"></div>
+                <p class="value-prop">
+                    The only conversational automation platform <span class="emphasize-word">purpose</span> built for regulated industries.
+                </p>
+                <p class="supporting-tagline">
+                    Trust Orchestrator governs automated conversations within your rules <span class="highlight-word">safely</span>, <span class="highlight-word">consistently</span>, and <span class="highlight-word">at scale</span>.
+                </p>
+            </div>
+
+            <!-- Narrative Section - The Story -->
+            <div class="narrative-section">
+                <h2 class="era-title">The Next Era of Conversational AI</h2>
+                <p class="era-subtitle">From fluent <span class="emphasize-word">talkers</span> to trusted <span class="emphasize-word">doers</span>.</p>
+
+                <div class="narrative-flow">
+                    <p class="narrative-challenge">Regulated industries face a new challenge:</p>
+
+                    <p class="narrative-question">AI can speak beautifully, but can it follow the rules?</p>
+
+                    <div class="narrative-problem">
+                        <p>When compliance meets complexity, most platforms falter.</p>
+                        <p>They sound human but can't prove what was said, why it was said, or whether it stayed inside policy.</p>
+                    </div>
+
+                    <div class="narrative-transition">
+                        <div class="transition-divider">
+                            <span class="transition-ornament">♪</span>
+                        </div>
+                        <div class="transition-brand-reveal">
+                            <span class="transition-intro">Enter</span>
+                            <h3 class="transition-brand">Trust Orchestrator</h3>
+                        </div>
+                        <div class="transition-divider">
+                            <span class="transition-ornament">♪</span>
+                        </div>
+                    </div>
+
+                    <div class="narrative-solution">
+                        <p>We re-engineered conversational AI from the ground up for trust, control, and scale.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plateau Section - Why Others Fail -->
+            <div class="plateau-section">
+                <h2 class="plateau-title">Why Other Platforms Plateau</h2>
+
+                <div class="plateau-content">
+                    <p class="plateau-statement">
+                        Most CX automation tools are built to <strong>support agents</strong>, <span class="emphasize-word">not replace them</span>.
+                    </p>
+                    <p class="plateau-statement">
+                        They are optimised for <strong>assisted conversation orchestration</strong>, not autonomy.
+                    </p>
+
+                    <p class="plateau-problem-highlight">
+                        The moment regulation or diagnostic complexity enters, humans must step back in.
+                    </p>
+
+                    <div class="plateau-visual">
+                        <img src="assets/WLandscape.png" alt="Trust Orchestrator Platform Architecture" class="plateau-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Page -->
+        <div class="right-page">
+            <!-- Built For Regulated Industries Section -->
+            <div class="built-for-section">
+                <h2 class="built-for-title">Built for Regulated Industries</h2>
+                <p class="built-for-description">
+                    Trust Orchestrator governs every automated conversation within your rules <span class="highlight-word">safely</span>, <span class="highlight-word">consistently</span>, and <span class="highlight-word">auditably</span> across voice and chat.
+                </p>
+
+                <div class="pillars-container">
+                    <div class="pillar">
+                        <span class="pillar-label">By Design</span>
+                        <h3 class="pillar-header">Compliance</h3>
+                        <p class="pillar-description">
+                            <strong>Every rule</strong> captured, applied, and auditable.
+                        </p>
+                    </div>
+
+                    <div class="pillar">
+                        <span class="pillar-label">By Nature</span>
+                        <h3 class="pillar-header">Fluent</h3>
+                        <p class="pillar-description">
+                            <strong>Human-like interactions</strong> that feel natural yet stay in policy.
+                        </p>
+                    </div>
+
+                    <div class="pillar">
+                        <span class="pillar-label">By Architecture</span>
+                        <h3 class="pillar-header">Scalable</h3>
+                        <p class="pillar-description">
+                            <strong>Rule-driven logic</strong> connects front-office and back-office seamlessly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakthrough Section - The Solution -->
+            <div class="breakthrough-section">
+                <h2 class="breakthrough-title">Why Trust Orchestrator Breaks Through</h2>
+
+                <div class="breakthrough-content">
+                    <p class="breakthrough-principle">
+                        We are deterministic first, probabilistic second.
+                    </p>
+
+                    <p class="breakthrough-statement">
+                        <strong>Rules</strong> control every engagement; <strong>data</strong> shapes every response.
+                    </p>
+
+                    <p class="breakthrough-intro">This means every conversation:</p>
+
+                    <div class="breakthrough-grid">
+                        <div class="breakthrough-item">
+                            <div class="breakthrough-check">✓</div>
+                            <div class="breakthrough-text">Stays compliant</div>
+                        </div>
+
+                        <div class="breakthrough-item">
+                            <div class="breakthrough-check">✓</div>
+                            <div class="breakthrough-text">Adapts to context and sentiment</div>
+                        </div>
+
+                        <div class="breakthrough-item">
+                            <div class="breakthrough-check">✓</div>
+                            <div class="breakthrough-text">Remains fully traceable</div>
+                        </div>
+
+                        <div class="breakthrough-item">
+                            <div class="breakthrough-check">✓</div>
+                            <div class="breakthrough-text">Gets the job done first time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section - Proof Points -->
+            <div class="results-section">
+                <h2 class="results-title">The Results</h2>
+
+                <p class="results-intro">Organizations using Trust Orchestrator achieve measurable improvements across key metrics:</p>
+
+                <!-- Stats Bar -->
+                <div class="results-stats-bar">
+                    <div class="results-stat-item">
+                        <div class="results-stat-number">40%</div>
+                        <div class="results-stat-label">Reduction in training time*</div>
+                    </div>
+                    <div class="results-stat-divider">|</div>
+                    <div class="results-stat-item">
+                        <div class="results-stat-number">95%+</div>
+                        <div class="results-stat-label">First contact resolution*</div>
+                    </div>
+                </div>
+
+                <!-- Benefits List -->
+                <div class="results-benefits">
+                    <div class="results-benefit-item">
+                        <span class="results-benefit-icon">♪</span>
+                        <span class="results-benefit-text">Automate more conversations safely within regulatory boundaries</span>
+                    </div>
+                    <div class="results-benefit-item">
+                        <span class="results-benefit-icon">♪</span>
+                        <span class="results-benefit-text">Achieve full audit readiness with complete conversation traceability</span>
+                    </div>
+                    <div class="results-benefit-item">
+                        <span class="results-benefit-icon">♪</span>
+                        <span class="results-benefit-text">Build customer confidence through consistent, compliant interactions</span>
+                    </div>
+                </div>
+
+                <p class="results-disclaimer">*Illustrative insight based on customer results.</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2 class="cta-title">The Takeaway</h2>
+                <p class="cta-text">
+                    If your digital strategy is to <span class="emphasize-word">maximise automation</span> without compromising compliance,
+                    you need Trust Orchestrator.
+                </p>
+                <p style="font-size: 0.8rem; color: var(--silver); margin-bottom: 2mm;">
+                    If you are content optimising human performance, the others will do just fine.
+                </p>
+                <p style="font-size: 1rem; color: var(--mustard-accent); font-weight: 500; margin-bottom: 2.5mm;">
+                    Orchestrate trust at scale.
+                </p>
+                <a href="#" class="cta-button">Book a Demo ➜</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
